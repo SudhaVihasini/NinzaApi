@@ -15,12 +15,16 @@ import com.ninza.hrm.api.genericutility.JavaUtility;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class Addproject {
+public class AddprojectwithoutcreatedBy {
 	JavaUtility jlib=new JavaUtility();
 	@Test
+	
 	public  void postdata() throws Throwable {
 		DatabaseUtility dLib=new DatabaseUtility();
 	int ranNum=	jlib.getRandomNumber();
+		
+		
+		
 		JSONObject jsonobj =new JSONObject();
 		jsonobj.put("createdBy","lithi");
 	//jsonobj.put("status","Created");
@@ -29,9 +33,14 @@ public class Addproject {
 	
 		jsonobj.put("teamSize",0);
 		jsonobj.put("projectName","Airtel"+ranNum);
-		String expSuccMsg = "Successfully Added";
+		
+		
+
+				String expSuccMsg = "Successfully Added";
 				
-		Response resp=	given()
+		
+		
+	Response resp=	given()
 		.contentType(ContentType.JSON).body(jsonobj.toJSONString())
 		.when().post("http://49.249.28.218:8091/addProject");
 		resp.then()
@@ -47,6 +56,7 @@ public class Addproject {
      String actMsg=resp.jsonPath().get("msg");
      String projName=resp.jsonPath().get("projectName");
      String expectedProName=("Airtel"+ranNum);
+     
      
      Assert.assertEquals(expSuccMsg, actMsg);
    Assert.assertEquals(expectedProName, projName);

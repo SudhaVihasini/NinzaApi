@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ninza_hrm.Addproject">
+      <class name="ninza_hrm.AddProjectwithoutStatus">
         <methods>
           <include name="postdata"/>
         </methods>
-      </class> <!-- ninza_hrm.Addproject -->
+      </class> <!-- ninza_hrm.AddProjectwithoutStatus -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,9 +7,13 @@ public class ProjectPojo {
 	String createdBy;
 	int teamSize;
 	
+	
 	public ProjectPojo() {}
 	
 	
+	
+
+
 	public ProjectPojo(String projectName, String status, String createdBy, int teamSize) {
 		super();
 		this.projectName = projectName;
@@ -57,6 +61,9 @@ public class ProjectPojo {
 	public void setTeamSize(int teamSize) {
 		this.teamSize = teamSize;
 	}
+
+
+	
 	
 	
 }
